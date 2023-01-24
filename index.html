@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naiya Patel</title>
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <section class="dark-mode">
+            <input type="checkbox" id="darkmode-toggle" onclick="darkmode()">
+            <label for="darkmode-toggle"></label>
+        </section>
+        <section class="hero-wrapper">
+            <img id="profile-pic" src="./assets/images/profile.JPG" alt="profile pic">
+            <div class="heading-wrapper">
+                <h1 id="user-name">Naiya Patel</h1>
+                <p>Currently, looking for job which will enable me to use strong technical skills, industrial expertise,
+                    <a href="#ed">educational background</a> and ability to work well with people around me.
+                </p>
+                <a id="user-email" href="mailto:itsnaiyapatel@gmail.com">👉 itsnaiyapatel@gmail.com</a>
+            </div>
+        </section>
+
+        <section class="social-cards">
+            <a href="http://www.linkedin.com/in/itsnaiyapatel">Linkedin</a>
+            <a href="https://www.instagram.com/itsnpatelig/">Instagram</a>
+            <a href="https://github.com/itsnaiyapatel">Github</a>
+            <a href="#">Website</a>
+            <a href="/assets/naiya-patel-resume.pdf" download>Download Resume</a>
+        </section>
+
+        <section class="skills-main-container">
+            <h2 class="skills-heading">Skills</h2>
+            <div class="skills-cards-wrapper">
+                <div class="skills-cards">Javascript, Python</div>
+                <div class="skills-cards">HTML, CSS</div>
+                <div class="skills-cards">NODE js, Express js</div>
+                <div class="skills-cards">React and Django Frameworks</div>
+                <div class="skills-cards">MS Office</div>
+                <div class="skills-cards">Leadership</div>
+                <div class="skills-cards">Adobe Suites</div>
+                <div class="skills-cards">MySQL & MongoDB</div>
+                <div class="skills-cards">Project Management</div>
+            </div>
+
+        </section>
+
+        <section class="work-history">
+            <h2 class="work-history-heading">Work History</h2>
+            <div class="work-experience">
+                <div class="experience-1">
+                    <div class="job-year">OCT 2019- AUG 2022</div>
+                    <div class="job-title">Team Leader</div>
+                    <div class="company">Wendys</div>
+                    <ul>
+                        <li>Mentored and guided employees to foster proper completion of assigned duties.</li>
+                        <li>Conducted training and mentored team members to promote productivity, accuracy and commitment to friendly service.</li>
+                        <li>Built strong relationships with customers through positive attitude and attentive response.</li>
+                        <li>Established open and professional relationships with team members to achieve quick resolutions for various issues.</li>
+                        <li>Facilitated training for associates through daily coaching and regular performance appraisals.</li>
+                    </ul>
+                </div>
+            </div>
+            
+        </section>
+
+        <section class="education-container" id="ed">
+            <h2 class="education-heading">Education</h2>
+            <div class="all-studies">
+                <div class="study-wrapper">
+                    <div class="year">2019</div>
+                    <div class="course-name">MOBILE APPLICATION DEVELOPMENT (DIPLOMA)</div>
+                    <div class="college-name">CANADORE COLLEGE, ON</div>
+                    <ul>
+                        <li>App development for Blackberry, Apple, and Android mobile devices</li>
+                        <li>3D graphics, animation and rich media</li>
+                        <li>Web dev for mobile devices</li>
+                        <li>Marketing and distribution of apps</li>
+                        <li>Video and audio editing</li>
+                    </ul>
+                </div>
+                <div class="study-wrapper">
+                    <div class="year">2018</div>
+                    <div class="course-name">PROJECT MANAGEMENT IN IT (DIPLOMA)</div>
+                    <div class="college-name">CANADORE COLLEGE, ON</div>
+                    <ul>
+                        <li>Managements fundamentals</li>
+                        <li>Leadership and communication</li>
+                        <li>Project and risk management</li>
+                        <li>Procurement and contract management</li>
+                    </ul>
+                </div>
+                <div class="study-wrapper">
+                    <div class="year">2013-2017</div>
+                    <div class="course-name">BACHELOR OF ENGINEERING IN COMPUTER ENGINEERING</div>
+                    <div class="college-name">VENUS INTERNATIONAL COLLEGE OF TECHNOLOGY, INDIA</div>
+                    <ul>
+                        <li>Object-oriented programming, data structure and problem solving</li>
+                        <li>Microprocessor Architecture</li>
+                        <li>Data Mining techniques and application</li>
+                        <li>Theory of computation</li>
+                        <li>Database management and AI</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="activities-container">
+            <h2>Activities</h2>
+            <p>Besides my education and work experiences, I love to engage in multi-cultural environment where I can
+                learn a lot of new things; participate in public functions and workplace gathering. As my hobbies, I
+                like travelling, cooking and watching movies.</p>
+        </section>
+    </div>
+
+    <script>
+        var checkbox = document.getElementById('darkmode-toggle');
+
+        function darkMode() {
+            document.body.classList.add('dark');
+            checkbox.checked = true;
+            sessionStorage.setItem('mode', 'dark');
+        }
+
+        function noDarkMode() {
+            document.body.classList.remove('dark');
+            checkbox.checked = false;
+            sessionStorage.setItem('mode', 'light');
+        }
+
+
+        if (sessionStorage.getItem('mode') == 'dark') {
+            darkMode();
+        }
+        else {
+            noDarkMode();
+        }
+
+        checkbox.addEventListener('change', () => {
+            if (checkbox.checked) {
+                darkMode();
+            }
+            else {
+                noDarkMode();
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

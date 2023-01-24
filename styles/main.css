@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --mainTextColor-light: #000;
+    --secondaryTextColor-light: rgb(51 51 51);
+    --mainLinkColor-light: #0da2b8;
+    --mainBorderColor-light: rgb(218, 218, 218);
+    --mainBgColor-light: rgb(249, 250, 251);
+
+    --mainTextColor-dark: #fff;
+    --secondaryTextColor-dark: #adb0b1;
+    --mainLinkColor-dark: rgb(30, 190, 214);
+    --mainBorderColor-dark: #2b3031;
+    --mainBgColor-dark: #131415;
+
+    --mainTextColor: var(--mainTextColor);
+    --secondaryTextColor: var(--secondaryTextColor);
+    --mainLinkColor: var(--mainLinkColor);
+    --mainBorderColor: var(--mainBorderColor);
+    --mainBgColor: var(--mainBgColor);
+
+}
+
+/* ------------------------------- Dark Mode----------------------------------------------- */
+.dark-mode {
+    display: flex;
+    justify-content: right;
+}
+
+label {
+    width: 3.3em;
+    height: 1.5em;
+    position: relative;
+    display: block;
+    background: #ebebeb;
+    border-radius: 200px;
+    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+
+}
+
+label:after {
+    content: "";
+    width: 1.2em;
+    height: 1.2em;
+    position: absolute;
+    top: 0.1em;
+    left: 0.2em;
+    background: linear-gradient(180deg, #ffcc89, #d8860b);
+    border-radius: 180px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+input:checked+label {
+    background: #242424;
+}
+
+input:checked+label:after {
+    left: 3.1em;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg, #777, #3a3a3a);
+}
+
+label, label:after {
+    transition: 0.3s
+}
+
+label:active:after {
+    width:1.5em;
+}
+
+/* ------------------------------- ----------------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Readex Pro';
+
+}
+ 
+body {
+    color: var(--mainTextColor);
+    background-color: var(--mainBgColor);
+}
+
+.dark {
+    --mainTextColor: var(--mainTextColor-dark);
+    --secondaryTextColor: var(--secondaryTextColor-dark);
+    --mainLinkColor: var(--mainLinkColor-dark);
+    --mainBorderColor: var(--mainBorderColor-dark);
+    --mainBgColor: var(--mainBgColor-dark);
+}
+
+
+a {
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--mainLinkColor);
+}
+
+h2 {
+    font-size: 1.6em;
+}
+
+p, ul {
+    color: var(--secondaryTextColor);
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    width: 800px;
+    margin: 50px auto;
+    line-height: 1.6em;
+
+}
+
+/* ------------------------------- Hero Section----------------------------------------------- */
+
+.hero-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#profile-pic {
+    height: 160px;
+    border-radius: 50%;
+}
+
+.heading-wrapper {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.heading-wrapper p {
+    text-align: justify;
+    padding-bottom: 0.7em;
+}
+
+.heading-wrapper h1 {
+    font-size: 3em;
+    padding-top: 0.7em;
+    padding-bottom: 0.2em;
+}
+#user-email {
+    color: var(--mainTextColor);
+}
+/* -------------------------------Social Cards Section----------------------------------------------- */
+
+.social-cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.social-cards > a {
+    font-size: 0.92em;
+    color: var(--secondaryTextColor);
+}
+
+.social-cards > a:hover {
+    font-weight: 100;
+    color: var(--mainLinkColor);
+    font-size: 1em;
+}
+
+/* -------------------------------Skills Section----------------------------------------------- */
+
+.skills-main-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.skills-cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    padding-top: 1em;
+}
+
+.skills-cards {
+    border: 1px solid grey;
+    border-radius: 4px;
+    padding: 7px 10px;
+}
+/* -------------------------------Work Section----------------------------------------------- */
+
+
+
+
+/* -------------------------------Education Section----------------------------------------------- */
+
+.education-container, .work-history {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.all-studies {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em;
+    padding-left: 10px;
+    line-height: 1.8em;
+}
+
+.course-name, .job-title {
+    font-weight: 900;
+}
+
+.all-studies ul, .experience-1 ul {
+    padding-left: 40px;
+    font-size: 0.9em;
+}
+
+.college-name, .company {
+    font-style: italic;
+}
+
+.college-name, .year, .company, .job-year{
+    font-size: 0.9em;
+}
+
+.study-wrapper, .experience-1 {
+    border-left: 1px solid grey;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.activities-container p {
+    text-align: justify;
+    margin-top: 10px;
+}
+
+@media(max-width:600px){
+    *{
+        margin: 0;
+        padding: 0;
+        
+    }
+    .main-container{
+        margin: 10px auto;
+        width: 90%;
+    }
+    .hero-wrapper{
+        flex-direction: column;
+        justify-content: center;      
+        
+    }
+    .heading-wrapper{
+        width: 100%;
+        text-align: center;
+    }
+    .heading-wrapper h1 {
+        font-size: 1.8em;
+    }
+    .social-cards {
+        flex-wrap: wrap;
+    }
+    .study-wrapper, .experience-1 {
+        border: none;
+    }
+}
